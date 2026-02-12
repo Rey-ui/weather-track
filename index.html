@@ -4,38 +4,61 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/request-image-search/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>search images</title>
+    <title>weather app</title>
     
     <script type="module" crossorigin src="/request-image-search/commonHelpers.js"></script>
-    <link rel="modulepreload" crossorigin href="/request-image-search/assets/vendor-527658dd.js">
-    <link rel="stylesheet" href="/request-image-search/assets/vendor-cf6910df.css">
-    <link rel="stylesheet" href="/request-image-search/assets/index-2fda6f49.css">
+    <link rel="modulepreload" crossorigin href="/request-image-search/assets/vendor-db25513e.js">
+    <link rel="stylesheet" href="/request-image-search/assets/vendor-e5212ee8.css">
+    <link rel="stylesheet" href="/request-image-search/assets/index-1eb260cd.css">
   </head>
 
   <body>
-    <div class="wrapper">
-      <form class="form">
-        <label>
-          <input
-            type="text"
-            name="searchText"
-            placeholder="Search images..."
-            required
-          />
-        </label>
-        <button type="submit">Search</button>
-      </form>
-      <div class="loader hidden">
-        <div class="loader_inner"></div>
+    <header class="header">
+      <div class="container">
+        <h1 class="header__title">Weather App</h1>
+        <svg class="header__svg" width="35" height="30">
+          <use href="/request-image-search/assets/symbol-defs-bce96d34.svg#icon-cloud"></use>
+        </svg>
       </div>
-      <ul class="gallery"></ul>
-      <button class="load-more hidden">
-        <span class="pre-loader hidden"></span>
-        <span class="load-more-text">load more</span>
-      </button>
-    </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-
+    </header>
+    <main class="main">
+      <section class="section popular-cities">
+        <div class="container">
+          <h2 class="popular-cities__title">Popular Cities</h2>
+          <ul class="popular-cities__list"></ul>
+        </div>
+      </section>
+      <section class="section our-cities">
+        <div class="container">
+          <aside class="our-cities__bar">
+            <button class="our-cities__clear-btn">clear</button>
+          </aside>
+          <div class="our-cities__content">
+            <form class="our-cities__form">
+              <input
+                type="text"
+                placeholder="Enter city name..."
+                name="city"
+                class="our-cities__form-input"
+              />
+              <button type="submit" class="our-cities__form-btn">
+                <svg class="header__svg" width="20" height="20">
+                  <use href="/request-image-search/assets/symbol-defs-bce96d34.svg#icon-plus"></use>
+                </svg>
+                <span>add</span>
+              </button>
+            </form>
+            <ul class="our-cities__list"></ul>
+          </div>
+        </div>
+      </section>
+      <!-- <img
+        src="./img/istockphoto-841828528-612x612.jpg"
+        alt=""
+        width="200"
+        height="200"
+      /> -->
+    </main>
     
   </body>
 </html>
