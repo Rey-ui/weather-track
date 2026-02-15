@@ -9,7 +9,7 @@ function createPopularCityCardMarkup({ id, name, main: { temp }, weather }) {
                       <div>
                         <div>
                           <svg class="header__svg" width="35" height="30">
-                              <use href="./img/svg/symbol-defs.svg#${weatherIconText}"></use>
+                              <use href="./svg/symbol-defs.svg#${weatherIconText}"></use>
                           </svg>
                           <span>${weatherIcon}</span>
                         </div>

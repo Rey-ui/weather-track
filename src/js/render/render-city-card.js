@@ -12,7 +12,7 @@ function createCityCardMarkup(cities, list) {
                       <div>
                         <div>
                           <svg class="header__svg" width="35" height="30">
-                              <use href="./img/svg/symbol-defs.svg#${weatherIconText}"></use>
+                              <use href="./svg/symbol-defs.svg#${weatherIconText}"></use>
                           </svg>
                           <span>${weatherIcon}</span>
                         </div>
@@ -21,13 +21,13 @@ function createCityCardMarkup(cities, list) {
                       <div>
                           <div>
                             <svg class="header__svg" width="15" height="15">
-                                <use href="./img/svg/symbol-defs.svg#icon-droplet"></use>
+                                <use href="./svg/symbol-defs.svg#icon-droplet"></use>
                             </svg>
                             <span>${humidity}%</span>
                           </div>
                           <div>
                             <svg class="header__svg" width="35" height="30">
-                                <use href="./img/svg/symbol-defs.svg#icon-wind"></use>
+                                <use href="./svg/symbol-defs.svg#icon-wind"></use>
                             </svg>
                             <span>${speed}mph</span>
                           </div>
@@ -36,7 +36,7 @@ function createCityCardMarkup(cities, list) {
                   </a>
                   <button class="item-btn">
                     <svg class="header__svg" width="35" height="30">
-                      <use href="../../img/svg/symbol-defs.svg#icon-trash"></use>
+                      <use href="./svg/symbol-defs.svg#icon-trash"></use>
                     </svg>
                   </button>
               </li>`;
