@@ -4,6 +4,7 @@ function createCityCardMarkup(cities, list) {
   const markup = cities
     .map(({ id, name, main: { humidity, temp }, weather, wind: { speed } }) => {
       const weatherIcon = weather[0].main;
+      const weatherIconText = getCurrentWeather(weatherIcon);
       return `<li id="${id}" class="our-cities__item">
                   <a href="../../parcials/city-info.html?name=${name}">
                     <h3>${name}</h3>
@@ -11,7 +12,7 @@ function createCityCardMarkup(cities, list) {
                       <div>
                         <div>
                           <svg class="header__svg" width="35" height="30">
-                              <use href="./img/svg/symbol-defs.svg#${getCurrentWeather(weatherIcon)}"></use>
+                              <use href="./img/svg/symbol-defs.svg#${weatherIconText}"></use>
                           </svg>
                           <span>${weatherIcon}</span>
                         </div>
@@ -35,7 +36,7 @@ function createCityCardMarkup(cities, list) {
                   </a>
                   <button class="item-btn">
                     <svg class="header__svg" width="35" height="30">
-                      <use href="./img/svg/symbol-defs.svg#icon-trash"></use>
+                      <use href="../../img/svg/symbol-defs.svg#icon-trash"></use>
                     </svg>
                   </button>
               </li>`;
