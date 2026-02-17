@@ -4,3 +4,4 @@ export const popularCitiesListEl = document.querySelector(
   '.popular-cities__list'
 );
 export const btnClear = document.querySelector('.our-cities__clear-btn');
+export const refreshBtn = document.querySelector('.our-cities__refresh-btn');

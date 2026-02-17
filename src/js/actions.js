@@ -99,3 +99,37 @@ function addCity(city) {
   saveCities(citiesArr, LOCAL_KEY);
   return citiesArr;
 }
+export async function handleRefreshBtnCities() {
+  const citiesNames = citiesArr.map(({ name }) => name);
+  citiesArr = [];
+
+  try {
+    for (let cityName of citiesNames) {
+      const CityItem = await searchCityWeather(cityName);
+      citiesListEl.innerHTML = '';
+      const newCity = addCity(CityItem);
+      createCityCardMarkup(newCity, citiesListEl);
+    }
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+// function getFilterWeatherOption(option) {
+//   const filterWeatherOption = {
+//     name: 'name',
+//     temperature: 'main: { temp }',
+//     humidity: 'main: { humidity}',
+//     windSpeed: 'wind: { speed }',
+//   };
+//   return filterWeatherOption[option] || 'name';
+// }
+// export function handleFilterWeather(e) {
+//   const btn = e.target.closest('.our-cities__bar-sorts-btn');
+//   if (!btn) return;
+
+//   const filterValue = btn.name;
+//   const chosenFilter = getFilterWeatherOption(filterValue);
+//   const filterCities = citiesArr.sort(({ chosenFilter })=> );
+//   console.log(filterCities);
+// }

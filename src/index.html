@@ -27,7 +27,35 @@
       <section class="section our-cities">
         <div class="container">
           <aside class="our-cities__bar">
-            <button class="our-cities__clear-btn">clear</button>
+            <h3 class="our-cities__title">
+              <svg class="our-cities__svg" width="30" height="30">
+                <use href="./svg/symbol-defs.svg#icon-sliders"></use>
+              </svg>
+              <span>Filters & Sort</span>
+            </h3>
+            <div class="our-cities__bar-content">
+              <div class="our-cities__bar-sorts">
+                <h4 class="our-cities__bar-sorts-title">Sort By</h4>
+                <div class="our-cities__bar-sorts-btns">
+                  <button name="name" class="our-cities__bar-sorts-btn">
+                    Name
+                  </button>
+                  <button name="temperature" class="our-cities__bar-sorts-btn">
+                    Temperature
+                  </button>
+                  <button name="humidity" class="our-cities__bar-sorts-btn">
+                    Humidity
+                  </button>
+                  <button name="windSpeed" class="our-cities__bar-sorts-btn">
+                    Wind Speed
+                  </button>
+                </div>
+              </div>
+              <div class="our-cities__bar-clear">
+                <h4 class="our-cities__bar-clear-title">Quick Actions</h4>
+                <button class="our-cities__clear-btn">clear</button>
+              </div>
+            </div>
           </aside>
           <div class="our-cities__content">
             <form class="our-cities__form">
@@ -39,11 +67,12 @@
               />
               <button type="submit" class="our-cities__form-btn">
                 <svg class="header__svg" width="20" height="20">
-                  <use href="./img/svg/symbol-defs.svg#icon-plus"></use>
+                  <use href="./svg/symbol-defs.svg#icon-plus"></use>
                 </svg>
                 <span>add</span>
               </button>
             </form>
+            <button class="our-cities__refresh-btn">refresh</button>
             <ul class="our-cities__list"></ul>
           </div>
         </div>
