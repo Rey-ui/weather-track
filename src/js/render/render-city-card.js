@@ -1,48 +1,61 @@
 import { getCurrentWeather } from '../actions.js';
-
+//const alternativeEl = '<p class="alternative">There are no cities yet</p>';
 function createCityCardMarkup(cities, list) {
-  const markup = cities
-    .map(({ id, name, main: { humidity, temp }, weather, wind: { speed } }) => {
-      const weatherIcon = weather[0].main;
-      const weatherIconText = getCurrentWeather(weatherIcon);
-      return `<li id="${id}" class="our-cities__item">
-                  <a href="../../parcials/city-info.html?name=${name}">
-                    <h3>${name}</h3>
-                    <div>
-                      <div>
-                        <div>
-                          <svg class="header__svg" width="35" height="30">
-                              <use href="./svg/symbol-defs.svg#${weatherIconText}"></use>
-                          </svg>
-                          <span>${weatherIcon}</span>
-                        </div>
-                        <p>${Math.ceil(temp - 273.15)}°</p>
+  if (cities.length > 0) {
+    const markup = cities
+      .map(
+        ({ id, name, main: { humidity, temp }, weather, wind: { speed } }) => {
+          const weatherIcon = weather[0].main;
+          const weatherIconText = getCurrentWeather(weatherIcon);
+          return `<li id="${id}" class="our-cities__item">
+                  <a class="our-cities__item-link" href="../../parcials/city-info.html?name=${name}">
+                    <div class="our-cities__item-up">
+                      <img
+                        src="./img/cityscape-on-white-background-building-perspective-modern-building-in-the-city-skyline-city-silhouette-city-skyscrapers-business-center-vector.jpg"
+                        alt=""
+                        width="200"
+                        height="200"
+                      />
+                      <h3 class="our-cities__item-name">${name}</h3>
+                    </div>
+                    <div class="our-cities__item-content">
+                      <p class="our-cities__item-temp">${Math.ceil(temp - 273.15)}°</p>
+                      <div class="our-cities__item-weather">
+                        <svg class="header__svg" width="35" height="30">
+                            <use href="./svg/symbol-defs.svg#${weatherIconText}"></use>
+                        </svg>
+                        <span>${weatherIcon}</span>
                       </div>
-                      <div>
-                          <div>
-                            <svg class="header__svg" width="15" height="15">
+                    </div>
+                      <div class="our-cities__item-down">
+                          <div class="our-cities__item-down-info">
+                            <svg  width="16" height="16">
                                 <use href="./svg/symbol-defs.svg#icon-droplet"></use>
                             </svg>
-                            <span>${humidity}%</span>
+                            <span class="our-cities__item-down-text">${humidity}%</span>
                           </div>
-                          <div>
-                            <svg class="header__svg" width="35" height="30">
+                          <div class="our-cities__item-down-info">
+                            <svg  width="16" height="16">
                                 <use href="./svg/symbol-defs.svg#icon-wind"></use>
                             </svg>
-                            <span>${speed}mph</span>
+                            <span class="our-cities__item-down-text">${speed}mph</span>
                           </div>
                       </div>
                     </div>
                   </a>
-                  <button class="item-btn">
-                    <svg class="header__svg" width="35" height="30">
+                  <button class="our-cities__item-btn">
+                    <svg  width="22" height="22">
                       <use href="./svg/symbol-defs.svg#icon-trash"></use>
                     </svg>
                   </button>
               </li>`;
-    })
-    .join('');
-  list.insertAdjacentHTML('beforeend', markup);
+        }
+      )
+      .join('');
+    list.insertAdjacentHTML('beforeend', markup);
+  } else {
+    list.innerHTML = '<p class="alternative">There are no cities yet</p>';
+  }
 }
 
 export default createCityCardMarkup;

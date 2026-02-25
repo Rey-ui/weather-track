@@ -1,0 +1,28 @@
+/* ================================================== */
+@import url('../base/roots.css');
+.header__svg {
+  fill: #030213;
+  stroke: #030213;
+}
+.header {
+  padding-top: 50px;
+  padding-bottom: 20px;
+  border-bottom: 0.7px solid var(--color-border);
+}
+.container {
+}
+.header__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header__title {
+  font-size: var(--main-title-desk);
+  font-weight: 700;
+  letter-spacing: -0.9px;
+}
+.header__svg {
+  width: 35px;
+  height: 32px;
+  stroke: #0f172b;
+}

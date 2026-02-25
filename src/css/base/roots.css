@@ -1,0 +1,48 @@
+:root {
+  /* ===== COLORS ===== */
+  --color-bg: #f8fafc;
+  --color-surface: #ffffff;
+  --color-primary: #0f172b;
+  --color-secondary: #717182;
+  /* --color-accent: #2563eb; */
+  --color-card-dark: #030213;
+  --color-border: #e2e8f0;
+
+  /* ===== TYPOGRAPHY ===== */
+  --font-main: Arial, Helvetica, sans-serif;
+
+  /* h1 */
+  --main-title-mob: 28px;
+  --main-title-tab: 32px;
+  --main-title-desk: 36px;
+
+  /* h2 */
+  --section-title-mob: 22px;
+  --section-title-tab: 24px;
+  --section-title-desk: 26px;
+
+  /* h3 */
+  --h3-size-mob: 20px;
+  /* --h3-size-tab: 20px; */
+  --h3-size-desk: 22px;
+
+  /* body */
+  --text-size: 16px;
+  --text-small: 14px;
+  --text-big: 18px;
+  --btn-size: 18px;
+  --section-padding-mob: 25px;
+  --section-padding-desk: 32px;
+
+  --container-padding-mob: 20px;
+  --container-padding-tab: 32px;
+
+  --gap-cards: 20px;
+  --card-padding: 20px;
+  --input-padding: 24px 34px;
+  --btn-padding: 10px 24px;
+  --radius-main: 15px;
+  --radius-small: 10px;
+  --shadow-card: 0 10px 15px rgba(15, 23, 43, 0.08);
+  --border-light: 0.7px solid #e2e8f0;
+}

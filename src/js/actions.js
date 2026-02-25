@@ -2,13 +2,15 @@ import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 import searchCityWeather from './services/weather-api.js';
 import createCityCardMarkup from './render/render-city-card.js';
-import { getSavedCities, saveCities } from './storage.js';
+import { saveCities } from './storage.js';
 
-import { citiesListEl } from './services/refs.js';
-
-const LOCAL_KEY = 'citiesList';
-let citiesArr = getSavedCities(LOCAL_KEY) || [];
-createCityCardMarkup(citiesArr, citiesListEl);
+import {
+  citiesListEl,
+  refreshBtn,
+  ourCitiesLoader,
+  citiesArr,
+  LOCAL_KEY,
+} from './services/refs.js';
 
 export function getCurrentWeather(weather) {
   const weatherArr = {
@@ -35,14 +37,15 @@ export async function handleSearchCity(e) {
   e.preventDefault();
   const form = e.currentTarget;
   const cityValue = form.elements.city.value.trim();
-
+  showLoader();
   if (!cityValue) {
     iziToast.error({
       title: 'Error',
-      message: `❌Sorry, already exist!`,
+      message: `❌Please enter the correct city name!`,
     });
     return;
   }
+
   try {
     const city = await searchCityWeather(cityValue);
     console.log(city.weather[0].main);
@@ -53,14 +56,16 @@ export async function handleSearchCity(e) {
       const cities = addCity(city);
       console.log(citiesArr);
       createCityCardMarkup(cities, citiesListEl);
+      refreshBtn.classList.add('active-btn');
     }
   } catch (err) {
     console.log(err);
     iziToast.error({
       title: 'Error',
-      message: `❌Sorry, there are no images matching your search query. Please, try again!`,
+      message: `❌Sorry, nothing was found for your request!`,
     });
   } finally {
+    hideLoader();
     form.reset();
   }
 }
@@ -68,41 +73,52 @@ export async function handleSearchCity(e) {
 function renderCities(citiesArr, list) {
   list.innerHTML = '';
   createCityCardMarkup(citiesArr, list);
+  if (citiesArr.length) {
+    refreshBtn.classList.add('active-btn');
+  }
 }
 
 export function handleDeleteTask(e) {
-  const btn = e.target.closest('.item-btn');
+  const btn = e.target.closest('.our-cities__item-btn');
   if (!btn) return;
   const li = btn.closest('li');
   const cityId = Number(li.id);
-  citiesArr = citiesArr.filter(city => city.id !== cityId);
+  const filtered = citiesArr.filter(city => city.id !== cityId);
+  citiesArr.length = 0;
+  citiesArr.push(...filtered);
   saveCities(citiesArr, LOCAL_KEY);
+  if (citiesArr.length) {
+    refreshBtn.classList.add('active-btn');
+  } else {
+    refreshBtn.classList.remove('active-btn');
+  }
   renderCities(citiesArr, citiesListEl);
 }
 
 export function handleClearCitiesList() {
-  citiesListEl.innerHTML = '';
-  citiesArr = [];
+  citiesListEl.innerHTML = '<p class="alternative">There are no cities yet</p>';
+  citiesArr.length = 0;
   localStorage.removeItem(LOCAL_KEY);
+  refreshBtn.classList.remove('active-btn');
 }
 function addCity(city) {
   const isExist = citiesArr.some(item => item.id === city.id);
   if (isExist) {
     iziToast.error({
       title: 'Error',
-      message: `❌Sorry, already exist!`,
+      message: `❌Sorry, already exists!`,
     });
     return citiesArr;
   }
 
-  citiesArr = [...citiesArr, city];
+  citiesArr.push(city);
   saveCities(citiesArr, LOCAL_KEY);
   return citiesArr;
 }
 export async function handleRefreshBtnCities() {
   const citiesNames = citiesArr.map(({ name }) => name);
-  citiesArr = [];
-
+  citiesArr.length = 0;
+  showLoader();
   try {
     for (let cityName of citiesNames) {
       const CityItem = await searchCityWeather(cityName);
@@ -112,24 +128,14 @@ export async function handleRefreshBtnCities() {
     }
   } catch (err) {
     console.log(err);
+  } finally {
+    hideLoader();
   }
 }
 
-// function getFilterWeatherOption(option) {
-//   const filterWeatherOption = {
-//     name: 'name',
-//     temperature: 'main: { temp }',
-//     humidity: 'main: { humidity}',
-//     windSpeed: 'wind: { speed }',
-//   };
-//   return filterWeatherOption[option] || 'name';
-// }
-// export function handleFilterWeather(e) {
-//   const btn = e.target.closest('.our-cities__bar-sorts-btn');
-//   if (!btn) return;
-
-//   const filterValue = btn.name;
-//   const chosenFilter = getFilterWeatherOption(filterValue);
-//   const filterCities = citiesArr.sort(({ chosenFilter })=> );
-//   console.log(filterCities);
-// }
+function hideLoader() {
+  ourCitiesLoader.classList.add('hidden');
+}
+function showLoader() {
+  ourCitiesLoader.classList.remove('hidden');
+}

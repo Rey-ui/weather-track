@@ -1,10 +1,11 @@
 import showPopularCities from './js/popularCities.js';
+import handleFilterWeather from './js/filters.js';
+import createCityCardMarkup from './js/render/render-city-card.js';
 import {
   handleSearchCity,
   handleDeleteTask,
   handleClearCitiesList,
   handleRefreshBtnCities,
-  // handleFilterWeather,
 } from './js/actions.js';
 import {
   formEl,
@@ -12,16 +13,14 @@ import {
   popularCitiesListEl,
   btnClear,
   refreshBtn,
+  sortContainer,
+  citiesArr,
 } from './js/services/refs.js';
 
 formEl.addEventListener('submit', handleSearchCity);
 citiesListEl.addEventListener('click', handleDeleteTask);
 btnClear.addEventListener('click', handleClearCitiesList);
 refreshBtn.addEventListener('click', handleRefreshBtnCities);
-
+sortContainer.addEventListener('click', handleFilterWeather);
 showPopularCities(popularCitiesListEl);
-
-// export const sortContainer = document.querySelector(
-//   '.our-cities__bar-sorts-btns'
-// );
-// sortContainer.addEventListener('click', handleFilterWeather);
+createCityCardMarkup(citiesArr, citiesListEl);
