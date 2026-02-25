@@ -1,49 +1,56 @@
-import{a as _,i as u}from"./assets/vendor-db25513e.js";(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const r of document.querySelectorAll('link[rel="modulepreload"]'))i(r);new MutationObserver(r=>{for(const s of r)if(s.type==="childList")for(const a of s.addedNodes)a.tagName==="LINK"&&a.rel==="modulepreload"&&i(a)}).observe(document,{childList:!0,subtree:!0});function n(r){const s={};return r.integrity&&(s.integrity=r.integrity),r.referrerPolicy&&(s.referrerPolicy=r.referrerPolicy),r.crossOrigin==="use-credentials"?s.credentials="include":r.crossOrigin==="anonymous"?s.credentials="omit":s.credentials="same-origin",s}function i(r){if(r.ep)return;r.ep=!0;const s=n(r);fetch(r.href,s)}})();const C="169e2d2ec6f9ef07a3c4e60acede402f",L="https://api.openweathermap.org/data/2.5";async function h(t){return(await _.get(`${L}/weather?q=${t}&appid=${C}`)).data}function l(t,e){const n=t.map(({id:i,name:r,main:{humidity:s,temp:a},weather:y,wind:{speed:v}})=>{const f=y[0].main,w=m(f);return`<li id="${i}" class="our-cities__item">
-                  <a href="../../parcials/city-info.html?name=${r}">
-                    <h3>${r}</h3>
-                    <div>
-                      <div>
-                        <div>
-                          <svg class="header__svg" width="35" height="30">
-                              <use href="./svg/symbol-defs.svg#${w}"></use>
-                          </svg>
-                          <span>${f}</span>
-                        </div>
-                        <p>${Math.ceil(a-273.15)}°</p>
+import{a as M,i as p}from"./assets/vendor-db25513e.js";(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const i of document.querySelectorAll('link[rel="modulepreload"]'))s(i);new MutationObserver(i=>{for(const r of i)if(r.type==="childList")for(const c of r.addedNodes)c.tagName==="LINK"&&c.rel==="modulepreload"&&s(c)}).observe(document,{childList:!0,subtree:!0});function o(i){const r={};return i.integrity&&(r.integrity=i.integrity),i.referrerPolicy&&(r.referrerPolicy=i.referrerPolicy),i.crossOrigin==="use-credentials"?r.credentials="include":i.crossOrigin==="anonymous"?r.credentials="omit":r.credentials="same-origin",r}function s(i){if(i.ep)return;i.ep=!0;const r=o(i);fetch(i.href,r)}})();const q="169e2d2ec6f9ef07a3c4e60acede402f",I="https://api.openweathermap.org/data/2.5";async function g(t){return(await M.get(`${I}/weather?q=${t}&appid=${q}`)).data}function f(t,e){if(t.length>0){const o=t.map(({id:s,name:i,main:{humidity:r,temp:c},weather:l,wind:{speed:u}})=>{const v=l[0].main,$=C(v);return`<li id="${s}" class="our-cities__item">
+                  <a class="our-cities__item-link" href="../../parcials/city-info.html?name=${i}">
+                    <div class="our-cities__item-up">
+                      <img
+                        src="./img/cityscape-on-white-background-building-perspective-modern-building-in-the-city-skyline-city-silhouette-city-skyscrapers-business-center-vector.jpg"
+                        alt=""
+                        width="200"
+                        height="200"
+                      />
+                      <h3 class="our-cities__item-name">${i}</h3>
+                    </div>
+                    <div class="our-cities__item-content">
+                      <p class="our-cities__item-temp">${Math.ceil(c-273.15)}°</p>
+                      <div class="our-cities__item-weather">
+                        <svg class="header__svg" width="35" height="30">
+                            <use href="./svg/symbol-defs.svg#${$}"></use>
+                        </svg>
+                        <span>${v}</span>
                       </div>
-                      <div>
-                          <div>
-                            <svg class="header__svg" width="15" height="15">
+                    </div>
+                      <div class="our-cities__item-down">
+                          <div class="our-cities__item-down-info">
+                            <svg  width="16" height="16">
                                 <use href="./svg/symbol-defs.svg#icon-droplet"></use>
                             </svg>
-                            <span>${s}%</span>
+                            <span class="our-cities__item-down-text">${r}%</span>
                           </div>
-                          <div>
-                            <svg class="header__svg" width="35" height="30">
+                          <div class="our-cities__item-down-info">
+                            <svg  width="16" height="16">
                                 <use href="./svg/symbol-defs.svg#icon-wind"></use>
                             </svg>
-                            <span>${v}mph</span>
+                            <span class="our-cities__item-down-text">${u}mph</span>
                           </div>
                       </div>
                     </div>
                   </a>
-                  <button class="item-btn">
-                    <svg class="header__svg" width="35" height="30">
+                  <button class="our-cities__item-btn">
+                    <svg  width="22" height="22">
                       <use href="./svg/symbol-defs.svg#icon-trash"></use>
                     </svg>
                   </button>
-              </li>`}).join("");e.insertAdjacentHTML("beforeend",n)}function S(t){return JSON.parse(localStorage.getItem(t))||[]}function g(t,e){return localStorage.setItem(e,JSON.stringify(t))}const b=document.querySelector(".our-cities__form"),c=document.querySelector(".our-cities__list"),$=document.querySelector(".popular-cities__list"),E=document.querySelector(".our-cities__clear-btn"),T=document.querySelector(".our-cities__refresh-btn"),d="citiesList";let o=S(d)||[];l(o,c);function m(t){return{Clear:"icon-sun",Clouds:"icon-cloud",Rain:"icon-cloud-rain",Drizzle:"icon-cloud-drizzle",Thunderstorm:"icon-cloud-lightning",Snow:"icon-cloud-snow",Mist:"icon-weather-windy",Smoke:"icon-weather-windy",Haze:"icon-weather-windy-cloudy",Dust:"icon-triangle",Fog:"icon-eye-off",Sand:"icon-chart-area",Ash:"icon-chart-area",Squall:"icon-warning",Tornado:"icon-warning"}[t]||"icon-cloud"}async function I(t){t.preventDefault();const e=t.currentTarget,n=e.elements.city.value.trim();if(!n){u.error({title:"Error",message:"❌Sorry, already exist!"});return}try{const i=await h(n);if(console.log(i.weather[0].main),!i||i.length===0)return;{c.innerHTML="";const r=p(i);console.log(o),l(r,c)}}catch(i){console.log(i),u.error({title:"Error",message:"❌Sorry, there are no images matching your search query. Please, try again!"})}finally{e.reset()}}function M(t,e){e.innerHTML="",l(t,e)}function A(t){const e=t.target.closest(".item-btn");if(!e)return;const n=e.closest("li"),i=Number(n.id);o=o.filter(r=>r.id!==i),g(o,d),M(o,c)}function P(){c.innerHTML="",o=[],localStorage.removeItem(d)}function p(t){return o.some(n=>n.id===t.id)?(u.error({title:"Error",message:"❌Sorry, already exist!"}),o):(o=[...o,t],g(o,d),o)}async function q(){const t=o.map(({name:e})=>e);o=[];try{for(let e of t){const n=await h(e);c.innerHTML="";const i=p(n);l(i,c)}}catch(e){console.log(e)}}function O({id:t,name:e,main:{temp:n},weather:i}){const r=i[0].main,s=m(r);return`<li id="${t}" class="our-cities__item">
-                    <a href="../../parcials/city-info.html?name=${e}">
-                      <h3>${e}</h3>
-                      <div>
-                        <div>
-                          <svg class="header__svg" width="35" height="30">
-                              <use href="./svg/symbol-defs.svg#${s}"></use>
-                          </svg>
-                          <span>${r}</span>
-                        </div>
-                        <p>${Math.ceil(n-273.15)}°</p>
+              </li>`}).join("");e.insertAdjacentHTML("beforeend",o)}else e.innerHTML='<p class="alternative">There are no cities yet</p>'}function A(t){return JSON.parse(localStorage.getItem(t))||[]}function w(t,e){return localStorage.setItem(e,JSON.stringify(t))}const m="citiesList",H=document.querySelector(".our-cities__form"),a=document.querySelector(".our-cities__list"),k=document.querySelector(".popular-cities__list"),O=document.querySelector(".our-cities__clear-btn"),h=document.querySelector(".our-cities__refresh-btn"),L=document.querySelector(".loader"),b=document.querySelector(".our-cities__loader"),x=document.querySelector(".our-cities__bar-sorts-btns");let n=A(m)||[];function C(t){return{Clear:"icon-sun",Clouds:"icon-cloud",Rain:"icon-cloud-rain",Drizzle:"icon-cloud-drizzle",Thunderstorm:"icon-cloud-lightning",Snow:"icon-cloud-snow",Mist:"icon-weather-windy",Smoke:"icon-weather-windy",Haze:"icon-weather-windy-cloudy",Dust:"icon-triangle",Fog:"icon-eye-off",Sand:"icon-chart-area",Ash:"icon-chart-area",Squall:"icon-warning",Tornado:"icon-warning"}[t]||"icon-cloud"}async function P(t){t.preventDefault();const e=t.currentTarget,o=e.elements.city.value.trim();if(E(),!o){p.error({title:"Error",message:"❌Please enter the correct city name!"});return}try{const s=await g(o);if(console.log(s.weather[0].main),!s||s.length===0)return;{a.innerHTML="";const i=S(s);console.log(n),f(i,a),h.classList.add("active-btn")}}catch(s){console.log(s),p.error({title:"Error",message:"❌Sorry, nothing was found for your request!"})}finally{T(),e.reset()}}function N(t,e){e.innerHTML="",f(t,e),t.length&&h.classList.add("active-btn")}function z(t){const e=t.target.closest(".our-cities__item-btn");if(!e)return;const o=e.closest("li"),s=Number(o.id),i=n.filter(r=>r.id!==s);n.length=0,n.push(...i),w(n,m),n.length?h.classList.add("active-btn"):h.classList.remove("active-btn"),N(n,a)}function B(){a.innerHTML='<p class="alternative">There are no cities yet</p>',n.length=0,localStorage.removeItem(m),h.classList.remove("active-btn")}function S(t){return n.some(o=>o.id===t.id)?(p.error({title:"Error",message:"❌Sorry, already exists!"}),n):(n.push(t),w(n,m),n)}async function j(){const t=n.map(({name:e})=>e);n.length=0,E();try{for(let e of t){const o=await g(e);a.innerHTML="";const s=S(o);f(s,a)}}catch(e){console.log(e)}finally{T()}}function T(){b.classList.add("hidden")}function E(){b.classList.remove("hidden")}function D({id:t,name:e,main:{temp:o},weather:s}){const i=s[0].main,r=C(i);return`<li id="${t}" class="popular-cities__item">
+                    <a class="popular-cities__item-link" href="../../parcials/city-info.html?name=${e}">
+                      <div class="popular-cities__item-content">
+                        <h3  class="popular-cities__item-title">${e}</h3>
+                        <p class="popular-cities__item-text">${Math.ceil(o-273.15)}°</p>
                       </div>
+                      <div class="popular-cities__item-icon">
+                          <svg class="popular-cities__svg" width="35" height="30">
+                              <use href="./svg/symbol-defs.svg#${r}"></use>
+                          </svg>
+                          <span>${i}</span>
+                        </div>
                     </a>
-                </li>`}const N=["London","Tokio","Paris","Berlin","Kyiv","Seoul","Pekin","Toronto"];async function x(t){try{for(let e of N){const n=await h(e);t.insertAdjacentHTML("beforeend",O(n))}}catch(e){console.log(e)}}b.addEventListener("submit",I);c.addEventListener("click",A);E.addEventListener("click",P);T.addEventListener("click",q);x($);
+                </li>`}const K=["London","Tokio","Paris","Berlin","Kyiv","Seoul","Toronto"];function F(){L.classList.add("hidden")}function R(){L.classList.remove("hidden")}async function W(t){R();try{for(let e of K){const o=await g(e);t.insertAdjacentHTML("beforeend",D(o))}}catch(e){console.log(e)}finally{F()}}function y(t,e){switch(e){case"temperature":return t.main.temp;case"humidity":return t.main.humidity;case"windSpeed":return t.wind.speed;case"name":default:return t.name}}let d=!0,_=null;function J(t){const e=t.target.closest(".our-cities__bar-sorts-btn");if(!e)return;const o=e.querySelector(".our-cities__bar-sorts-svg");console.log(e),console.log(o),document.querySelectorAll(".our-cities__bar-sorts-btn").forEach(r=>{r.classList.remove("active");const c=r.querySelector(".our-cities__bar-sorts-svg");c&&(c.innerHTML='<use href="./svg/symbol-defs.svg#icon-arrow-up"></use>')});const s=e.name;e.classList.add("active"),_===s?d=!d:(_=s,d=!0),o.innerHTML=d?'<use href="./svg/symbol-defs.svg#icon-arrow-up"></use>':'<use href="./svg/symbol-defs.svg#icon-arrow-down"></use>';const i=[...n].sort((r,c)=>{const l=y(r,s),u=y(c,s);return typeof l=="string"?d?l.localeCompare(u):u.localeCompare(l):d?u-l:l-u});a.innerHTML="",f(i,a)}H.addEventListener("submit",P);a.addEventListener("click",z);O.addEventListener("click",B);h.addEventListener("click",j);x.addEventListener("click",J);W(k);f(n,a);
 //# sourceMappingURL=commonHelpers.js.map

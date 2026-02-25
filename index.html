@@ -9,75 +9,148 @@
     <script type="module" crossorigin src="/weather-track/commonHelpers.js"></script>
     <link rel="modulepreload" crossorigin href="/weather-track/assets/vendor-db25513e.js">
     <link rel="stylesheet" href="/weather-track/assets/vendor-e5212ee8.css">
-    <link rel="stylesheet" href="/weather-track/assets/index-1eb260cd.css">
+    <link rel="stylesheet" href="/weather-track/assets/index-2da7470b.css">
   </head>
 
   <body>
     <header class="header">
       <div class="container">
-        <h1 class="header__title">Weather App</h1>
-        <svg class="header__svg" width="35" height="30">
-          <use href="./svg/symbol-defs.svg#icon-cloud"></use>
-        </svg>
+        <div class="header__content">
+          <h1 class="header__title">Weather App</h1>
+          <svg class="header__svg" width="35" height="30">
+            <use href="./svg/symbol-defs.svg#icon-cloud"></use>
+          </svg>
+        </div>
       </div>
     </header>
     <main class="main">
       <section class="section popular-cities">
         <div class="container">
-          <h2 class="popular-cities__title">Popular Cities</h2>
+          <h2 class="popular-cities__title section-title">Popular Cities</h2>
+          <div class="loader hidden">
+            <div class="loader_inner"></div>
+          </div>
           <ul class="popular-cities__list"></ul>
         </div>
       </section>
       <section class="section our-cities">
         <div class="container">
-          <aside class="our-cities__bar">
-            <h3 class="our-cities__title">
-              <svg class="our-cities__svg" width="30" height="30">
-                <use href="./svg/symbol-defs.svg#icon-sliders"></use>
-              </svg>
-              <span>Filters & Sort</span>
-            </h3>
-            <div class="our-cities__bar-content">
-              <div class="our-cities__bar-sorts">
-                <h4 class="our-cities__bar-sorts-title">Sort By</h4>
-                <div class="our-cities__bar-sorts-btns">
-                  <button name="name" class="our-cities__bar-sorts-btn">
-                    Name
-                  </button>
-                  <button name="temperature" class="our-cities__bar-sorts-btn">
-                    Temperature
-                  </button>
-                  <button name="humidity" class="our-cities__bar-sorts-btn">
-                    Humidity
-                  </button>
-                  <button name="windSpeed" class="our-cities__bar-sorts-btn">
-                    Wind Speed
+          <div class="our-cities__container">
+            <aside class="our-cities__bar">
+              <h3 class="our-cities__title">
+                <svg class="our-cities__svg" width="30" height="30">
+                  <use href="./svg/symbol-defs.svg#icon-sliders"></use>
+                </svg>
+                <span>Filters & Sort</span>
+              </h3>
+              <div class="our-cities__bar-content">
+                <div class="our-cities__bar-sorts">
+                  <h4 class="our-cities__bar-sorts-title title">Sort By</h4>
+                  <div class="our-cities__bar-sorts-btns">
+                    <button name="name" class="our-cities__bar-sorts-btn">
+                      <div class="our-cities__bar-sorts-cont">
+                        <svg width="18" height="18">
+                          <use href="./svg/symbol-defs.svg#icon-menu"></use>
+                        </svg>
+                        <span>Name</span>
+                      </div>
+
+                      <svg
+                        class="our-cities__bar-sorts-svg"
+                        width="18"
+                        height="18"
+                      >
+                        <use href="./svg/symbol-defs.svg#icon-arrow-up"></use>
+                      </svg>
+                    </button>
+                    <button
+                      name="temperature"
+                      class="our-cities__bar-sorts-btn"
+                    >
+                      <div class="our-cities__bar-sorts-cont">
+                        <svg width="18" height="18">
+                          <use
+                            href="./svg/symbol-defs.svg#icon-thermometer"
+                          ></use>
+                        </svg>
+                        <span>Temperature</span>
+                      </div>
+
+                      <svg
+                        class="our-cities__bar-sorts-svg"
+                        width="18"
+                        height="18"
+                      >
+                        <use href="./svg/symbol-defs.svg#icon-arrow-up"></use>
+                      </svg>
+                    </button>
+                    <button name="humidity" class="our-cities__bar-sorts-btn">
+                      <div class="our-cities__bar-sorts-cont">
+                        <svg width="18" height="18">
+                          <use href="./svg/symbol-defs.svg#icon-droplet"></use>
+                        </svg>
+                        <span>Humidity</span>
+                      </div>
+
+                      <svg
+                        class="our-cities__bar-sorts-svg"
+                        width="18"
+                        height="18"
+                      >
+                        <use href="./svg/symbol-defs.svg#icon-arrow-up"></use>
+                      </svg>
+                    </button>
+                    <button name="windSpeed" class="our-cities__bar-sorts-btn">
+                      <div class="our-cities__bar-sorts-cont">
+                        <svg width="18" height="18">
+                          <use href="./svg/symbol-defs.svg#icon-wind"></use>
+                        </svg>
+                        <span>Wind Speed</span>
+                      </div>
+
+                      <svg
+                        class="our-cities__bar-sorts-svg"
+                        width="18"
+                        height="18"
+                      >
+                        <use href="./svg/symbol-defs.svg#icon-arrow-up"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="our-cities__bar-clear">
+                  <h4 class="our-cities__bar-clear-title title">
+                    Quick Actions
+                  </h4>
+                  <button class="our-cities__clear-btn primary-btn">
+                    Clear All Cities
                   </button>
                 </div>
               </div>
-              <div class="our-cities__bar-clear">
-                <h4 class="our-cities__bar-clear-title">Quick Actions</h4>
-                <button class="our-cities__clear-btn">clear</button>
-              </div>
-            </div>
-          </aside>
-          <div class="our-cities__content">
-            <form class="our-cities__form">
-              <input
-                type="text"
-                placeholder="Enter city name..."
-                name="city"
-                class="our-cities__form-input"
-              />
-              <button type="submit" class="our-cities__form-btn">
-                <svg class="header__svg" width="20" height="20">
-                  <use href="./svg/symbol-defs.svg#icon-plus"></use>
-                </svg>
-                <span>add</span>
+            </aside>
+            <div class="our-cities__content">
+              <form class="our-cities__form">
+                <input
+                  type="text"
+                  placeholder="Enter city name..."
+                  name="city"
+                  class="our-cities__form-input"
+                />
+                <button type="submit" class="primary-btn our-cities__form-btn">
+                  <svg width="18" height="18">
+                    <use href="./svg/symbol-defs.svg#icon-plus"></use>
+                  </svg>
+                  <span>add</span>
+                </button>
+              </form>
+              <button class="primary-btn our-cities__refresh-btn">
+                refresh
               </button>
-            </form>
-            <button class="our-cities__refresh-btn">refresh</button>
-            <ul class="our-cities__list"></ul>
+              <div class="our-cities__loader hidden">
+                <div class="our-cities__loader_inner"></div>
+              </div>
+              <ul class="our-cities__list"></ul>
+            </div>
           </div>
         </div>
       </section>
@@ -88,6 +161,9 @@
         height="200"
       /> -->
     </main>
+    <footer class="footer">
+      <img class="footer__bg" src="/weather-track/assets/city-picture-83c10a35.png" alt="" />
+    </footer>
     
   </body>
 </html>
