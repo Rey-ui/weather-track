@@ -2,7 +2,7 @@ import{a as M,i as p}from"./assets/vendor-db25513e.js";(function(){const e=docum
                   <a class="our-cities__item-link" href="../../parcials/city-info.html?name=${i}">
                     <div class="our-cities__item-up">
                       <img
-                        src="./img/cityscape-on-white-background-building-perspective-modern-building-in-the-city-skyline-city-silhouette-city-skyscrapers-business-center-vector.jpg"
+                        src="./public/img/cityscape-on-white-background-building-perspective-modern-building-in-the-city-skyline-city-silhouette-city-skyscrapers-business-center-vector.jpg"
                         alt=""
                         width="200"
                         height="200"
