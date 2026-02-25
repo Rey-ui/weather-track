@@ -11,7 +11,7 @@ function createCityCardMarkup(cities, list) {
                   <a class="our-cities__item-link" href="../../parcials/city-info.html?name=${name}">
                     <div class="our-cities__item-up">
                       <img
-                        src="./img/cityscape-on-white-background-building-perspective-modern-building-in-the-city-skyline-city-silhouette-city-skyscrapers-business-center-vector.jpg"
+                        src="./public/img/cityscape-on-white-background-building-perspective-modern-building-in-the-city-skyline-city-silhouette-city-skyscrapers-business-center-vector.jpg"
                         alt=""
                         width="200"
                         height="200"
