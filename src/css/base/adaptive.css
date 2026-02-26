@@ -5,6 +5,10 @@
     padding: 0 32px;
     max-width: 768px;
   }
+  .section-title {
+    font-size: var(--section-title-tab);
+    margin-bottom: 22px;
+  }
 }
 @media screen and (min-width: 1280px) {
   .section {
@@ -15,4 +19,290 @@
 
     max-width: 1280px;
   }
+  .section-title {
+    font-size: var(--section-title-desk);
+    margin-bottom: 24px;
+  }
 }
+
+/* ================================ */
+/* ==========header======min-width: 768px================ */
+@media screen and (min-width: 768px) {
+  .header__title {
+    font-size: var(--main-title-tab);
+  }
+}
+/* ==========header=====min-width: 1280px================= */
+@media screen and (min-width: 1280px) {
+  .header {
+    padding-top: 60px;
+    padding-bottom: 30px;
+  }
+  .header__title {
+    font-size: var(--main-title-desk);
+  }
+}
+/* ================================ */
+/* ================================ */
+/* ==========popular-cities======min-width: 768px================ */
+@media screen and (min-width: 768px) {
+  .popular-cities__list {
+    flex-direction: row;
+    gap: var(--gap-cards);
+  }
+
+  .popular-cities__item {
+    width: auto;
+  }
+  .popular-cities__item-link {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  .popular-cities__item-content {
+    flex-direction: column;
+
+    gap: 8px;
+  }
+  .popular-cities__item-link {
+    padding: var(--card-padding);
+    gap: 12px;
+  }
+  .popular-cities__item-title {
+    font-size: var(--h3-size-tab);
+  }
+  .popular-cities__item-content {
+    gap: 10px;
+  }
+  .popular-cities__item-icon {
+    gap: 15px;
+  }
+}
+/* ==========popular-cities=====min-width: 1280px================= */
+@media screen and (min-width: 1280px) {
+  .popular-cities__item-title {
+    font-size: var(--h3-size-desk);
+  }
+
+  .popular-cities__item-icon {
+    font-size: var(--text-size);
+  }
+
+  .popular-cities__item-text {
+    text-align: center;
+
+    font-size: var(--text-big);
+  }
+}
+/* ================================ */
+/* ================================ */
+/* ==========our-cities__bar======min-width: 768px================ */
+@media screen and (min-width: 768px) {
+  .our-cities__container {
+    gap: 35px;
+  }
+  .our-cities__bar {
+    gap: 22px;
+  }
+  .our-cities__title {
+    font-size: var(--h3-size-tab);
+  }
+  .our-cities__svg {
+    width: 30px;
+    height: 30px;
+  }
+  .our-cities__bar-content {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .our-cities__bar-sorts {
+    gap: 16px;
+    padding-bottom: 18px;
+  }
+  .our-cities__bar-sorts-title {
+    font-size: var(--text-big);
+  }
+  .our-cities__bar-sorts-btns {
+    gap: 10px;
+  }
+  .our-cities__bar-sorts-btn {
+    font-size: var(--text-size);
+    padding: 10px 18px;
+  }
+  .our-cities__bar-clear {
+    display: flex;
+    flex-direction: column;
+
+    gap: 16px;
+  }
+  .our-cities__bar-clear-title {
+    font-size: var(--text-big);
+  }
+}
+/* ==========our-cities__bar=====min-width: 1280px================= */
+@media screen and (min-width: 1280px) {
+  .our-cities__container {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 50px;
+  }
+  .our-cities__bar {
+    padding: var(--card-padding);
+
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 300px;
+  }
+  .our-cities__title {
+    font-size: var(--h3-size-desk);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .our-cities__svg {
+    width: 30px;
+    height: 30px;
+  }
+  .our-cities__bar-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .our-cities__bar-sorts {
+    display: flex;
+    flex-direction: column;
+
+    gap: 18px;
+    padding-bottom: 20px;
+  }
+  .our-cities__bar-sorts-title {
+    font-size: var(--text-big);
+    letter-spacing: 0.01em;
+  }
+  .our-cities__bar-sorts-btns {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+  }
+  .our-cities__bar-sorts-btn {
+    padding: 10px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: start;
+  }
+  .our-cities__bar-sorts-cont {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-align: start;
+  }
+
+  .our-cities__bar-clear {
+    display: flex;
+    flex-direction: column;
+
+    gap: 18px;
+  }
+  .our-cities__bar-clear-title {
+    font-size: var(--text-big);
+
+    letter-spacing: 0.01em;
+  }
+  .our-cities__clear-btn {
+    padding: var(--btn-padding);
+  }
+}
+/* ================================ */
+/* ================================ */
+/* ==========our-cities__content======min-width: 768px================ */
+@media screen and (min-width: 768px) {
+  .our-cities__form {
+    margin-bottom: 22px;
+  }
+  .our-cities__form-input {
+    padding: var(--input-padding);
+    font-size: var(--text-big);
+    padding-right: 134px;
+  }
+
+  .our-cities__form-btn {
+    top: 14px;
+    right: 12px;
+    gap: 8px;
+
+    font-size: var(--text-big);
+    padding: var(--btn-padding);
+  }
+  .our-cities__refresh-btn {
+    font-size: var(--text-big);
+    padding: var(--btn-padding);
+  }
+  .active-btn {
+    margin-bottom: 20px;
+  }
+  .our-cities__list {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .our-cities__item {
+    flex-basis: calc((100% - 20px) / 2);
+    background-color: var(--color-surface);
+    padding: var(--card-padding);
+    gap: 18px;
+  }
+
+  .our-cities__item-link {
+    gap: 16px;
+  }
+
+  .our-cities__item-up {
+    margin: -20px -20px 0 -20px;
+  }
+  .our-cities__item-temp {
+    font-size: var(--h3-size-tab);
+  }
+
+  .our-cities__item-down {
+    gap: 10px;
+  }
+  .our-cities__item-down-info {
+    padding: 5px 8px;
+    font-size: var(--text-size);
+  }
+}
+/* ==========our-cities__content=====min-width: 1280px================= */
+@media screen and (min-width: 1280px) {
+  .our-cities__form {
+    margin-bottom: 24px;
+  }
+
+  .our-cities__item {
+    flex-basis: calc((100% - 40px) / 3);
+
+    gap: 20px;
+  }
+  .our-cities__item-link {
+    gap: 18px;
+  }
+
+  .our-cities__item-name {
+    padding: 8px 18px;
+  }
+  .our-cities__item-weather {
+    font-size: var(--text-big);
+  }
+  .our-cities__item-down {
+    gap: 10px;
+  }
+}
+/* ================================ */

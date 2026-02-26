@@ -16,20 +16,20 @@ function createCityCardMarkup(cities, list) {
                         width="200"
                         height="200"
                       />
-                      <h3 class="our-cities__item-name">${name}</h3>
+                      <p class="our-cities__item-name">${name}</p>
                     </div>
                     <div class="our-cities__item-content">
-                      <p class="our-cities__item-temp">${Math.ceil(temp - 273.15)}°</p>
                       <div class="our-cities__item-weather">
-                        <svg class="header__svg" width="35" height="30">
+                        <svg width="35" height="30">
                             <use href="./svg/symbol-defs.svg#${weatherIconText}"></use>
                         </svg>
                         <span>${weatherIcon}</span>
                       </div>
+                      <h3 class="our-cities__item-temp">${Math.ceil(temp - 273.15)}°</h3>
                     </div>
                       <div class="our-cities__item-down">
                           <div class="our-cities__item-down-info">
-                            <svg  width="16" height="16">
+                            <svg class="our-cities__item-down-humid"  width="16" height="16">
                                 <use href="./svg/symbol-defs.svg#icon-droplet"></use>
                             </svg>
                             <span class="our-cities__item-down-text">${humidity}%</span>

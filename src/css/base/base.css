@@ -25,10 +25,10 @@ body {
   margin: 0 auto;
 }
 .section-title {
-  font-size: var(--section-title-desk);
+  font-size: var(--section-title-mob);
   color: var(--color-secondary);
   text-align: start;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }

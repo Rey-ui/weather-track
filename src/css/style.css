@@ -1,12 +1,12 @@
 @import url('./base/reset.css');
 @import url('./base/base.css');
 @import url('./base/roots.css');
-@import url('./base/adaptive.css');
 
 @import url('./components/header.css');
 @import url('./components/popular-cities-section.css');
 @import url('./components/our-cities-section.css');
 @import url('./components/loader.css');
+@import url('./base/adaptive.css');
 /* box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow); */
 
 /* =========================================== */

@@ -22,8 +22,8 @@
   --section-title-desk: 26px;
 
   /* h3 */
-  --h3-size-mob: 20px;
-  /* --h3-size-tab: 20px; */
+  --h3-size-mob: 18px;
+  --h3-size-tab: 20px;
   --h3-size-desk: 22px;
 
   /* body */
@@ -38,11 +38,16 @@
   --container-padding-tab: 32px;
 
   --gap-cards: 20px;
+  --gap-cards-mob: 15px;
   --card-padding: 20px;
+  --card-padding-mob: 18px;
   --input-padding: 24px 34px;
+  --input-padding-mob: 18px 28px;
+  --btn-padding-mob: 8px 20px;
   --btn-padding: 10px 24px;
   --radius-main: 15px;
   --radius-small: 10px;
   --shadow-card: 0 10px 15px rgba(15, 23, 43, 0.08);
   --border-light: 0.7px solid #e2e8f0;
+  --transition-main: all 250ms;
 }

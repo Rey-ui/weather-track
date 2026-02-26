@@ -1,5 +1,5 @@
 import createPopularCityCardMarkup from './render/render-popular-cities.js';
-import searchCityWeather from './services/weather-api.js';
+import { searchCityWeather } from './services/weather-api.js';
 import { loader } from './services/refs.js';
 const popularCities = [
   'London',

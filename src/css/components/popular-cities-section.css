@@ -1,45 +1,47 @@
 .popular-cities__list {
   display: flex;
   align-items: center;
+  flex-direction: column;
   flex-wrap: wrap;
-  gap: var(--gap-cards);
+  gap: var(--gap-cards-mob);
 }
 .popular-cities__item {
   min-width: 145px;
+  width: 100%;
 }
 .popular-cities__item-link {
-  border-radius: 15px;
-  padding: var(--card-padding);
+  border-radius: var(--radius-main);
+  padding: var(--card-padding-mob);
   background-color: var(--color-card-dark);
   color: #fff;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
-  gap: 12px;
-  transition: all 250ms;
+  gap: 10px;
+  transition: var(--transition-main);
 }
 .popular-cities__item-link:hover {
   transform: scale(1.04);
 }
 .popular-cities__item-title {
   color: #fff;
-  font-size: var(--h3-size-desk);
+  font-size: var(--h3-size-mob);
   font-weight: 500;
 }
 .popular-cities__item-content {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 18px;
 }
 .popular-cities__item-icon {
   display: flex;
   align-items: center;
   color: #fff;
-  gap: 15px;
-  font-size: var(--text-size);
+  gap: 12px;
+  font-size: var(--text-smoll);
   font-weight: 500;
 }
 .popular-cities__svg {
@@ -49,6 +51,6 @@
 .popular-cities__item-text {
   text-align: center;
   color: #fff;
-  font-size: 18px;
+  font-size: var(--text-size);
   font-weight: 600;
 }

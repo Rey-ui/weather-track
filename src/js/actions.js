@@ -1,6 +1,6 @@
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
-import searchCityWeather from './services/weather-api.js';
+import { searchCityWeather } from './services/weather-api.js';
 import createCityCardMarkup from './render/render-city-card.js';
 import { saveCities } from './storage.js';
 
@@ -139,3 +139,11 @@ function hideLoader() {
 function showLoader() {
   ourCitiesLoader.classList.remove('hidden');
 }
+function visibleRefreshBtn() {
+  if (citiesArr.length) {
+    refreshBtn.classList.add('active-btn');
+  } else {
+    refreshBtn.classList.remove('active-btn');
+  }
+}
+visibleRefreshBtn();
