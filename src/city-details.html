@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="./cloud.png" />
+    <title>City details weather</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="header__content">
+          <a href="./index.html" class="primary-btn header__back-link-desk"
+            ><svg class="header__svg" width="35" height="30">
+              <use href="./svg/symbol-defs.svg#icon-arrow-left"></use>
+            </svg>
+            <span>Back</span></a
+          >
+          <div class="header__logo">
+            <h1 class="header__title">Weather App</h1>
+            <svg class="header__svg" width="35" height="30">
+              <use href="./svg/symbol-defs.svg#icon-cloud"></use>
+            </svg>
+          </div>
+          <a href="./index.html" class="header__back-link-mob"
+            ><svg class="header__svg" width="35" height="30">
+              <use href="./svg/symbol-defs.svg#icon-arrow-left"></use>
+            </svg>
+            <span>Back</span></a
+          >
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <section class="section city-details">
+        <div class="container">
+          <div class="city-details__wrapper"></div>
+        </div>
+      </section>
+      <section class="section city-forcast">
+        <div class="container"><ul class="city-forcast__list"></ul></div>
+      </section>
+    </main>
+    <footer class="footer">
+      <img class="footer__bg" src="./public/img/city-picture.png" alt="" />
+    </footer>
+    <script type="module" src="./js/main-city-details.js"></script>
+  </body>
+</html>

@@ -235,6 +235,7 @@
 }
 .our-cities__item-up img {
   border-top-left-radius: var(--radius-main);
+  object-fit: cover;
   border-top-right-radius: var(--radius-main);
   width: 100%;
 }

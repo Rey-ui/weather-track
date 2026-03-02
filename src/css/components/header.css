@@ -23,3 +23,32 @@
   fill: #2563eb;
   stroke: none;
 }
+/* ======================details============================ */
+.header__content {
+}
+.header__back-link-desk {
+  color: var(--color-surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-big);
+  padding: var(--btn-padding);
+  font-weight: 600;
+}
+.header__back-link-desk span {
+  color: var(--color-surface);
+}
+.header__back-link-desk svg {
+  fill: var(--color-surface);
+}
+.header__svg {
+}
+.header__logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.header__title {
+}
+.header__back-link-mob {
+}

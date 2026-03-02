@@ -140,6 +140,7 @@ function showLoader() {
   ourCitiesLoader.classList.remove('hidden');
 }
 function visibleRefreshBtn() {
+  if (!refreshBtn) return;
   if (citiesArr.length) {
     refreshBtn.classList.add('active-btn');
   } else {

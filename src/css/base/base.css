@@ -9,11 +9,18 @@ body {
   line-height: 1;
   font-size: 16px;
   font-family: Arial, Helvetica, sans-serif;
+  /* position: relative; */
   background-color: var(--color-bg);
   color: #0f172b;
   margin: 0 auto;
   overflow-x: hidden;
+  /* display: flex;
+  flex-direction: column; */
+  /* min-height: 100vh; */
 }
+/* main {
+  flex: 1;
+} */
 .section {
   padding: 25px 0;
 }
@@ -37,4 +44,7 @@ body {
   color: var(--color-surface);
   font-size: var(--btn-size);
   background-color: var(--color-card-dark);
+}
+.header__back-link-mob {
+  display: none;
 }

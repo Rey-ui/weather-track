@@ -6,10 +6,17 @@
 @import url('./components/popular-cities-section.css');
 @import url('./components/our-cities-section.css');
 @import url('./components/loader.css');
+@import url('./components/city-details/city-details.css');
 @import url('./base/adaptive.css');
+
 /* box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow); */
 
 /* =========================================== */
+/* .footer {
+  position: absolute;
+  bottom: 0;
+} */
+
 .footer__bg {
   width: 100%;
   object-fit: cover;

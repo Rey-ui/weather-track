@@ -260,7 +260,6 @@
     padding: var(--card-padding);
     gap: 18px;
   }
-
   .our-cities__item-link {
     gap: 16px;
   }
@@ -268,6 +267,7 @@
   .our-cities__item-up {
     margin: -20px -20px 0 -20px;
   }
+
   .our-cities__item-temp {
     font-size: var(--h3-size-tab);
   }
@@ -303,6 +303,132 @@
   }
   .our-cities__item-down {
     gap: 10px;
+  }
+}
+/* ================================ */
+/* ================================ */
+/* ==========city-details======min-width: 768px================ */
+@media screen and (min-width: 768px) {
+  .city-details__wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    gap: 35px;
+  }
+  .city-details__hero {
+    padding: 85px 30px;
+  }
+
+  .city-details__hero-info {
+    gap: 80px;
+  }
+  .city-details__hero-up {
+    gap: 24px;
+  }
+  .city-details__hero-name {
+    font-size: 24px;
+  }
+  .city-details__hero-temp {
+    font-size: 56px;
+  }
+  .city-details__hero-text {
+    font-size: 20px;
+  }
+  .city-details__weather {
+    gap: 25px;
+  }
+  .city-details__weather span {
+    font-size: 28px;
+  }
+  .city-details__weather svg {
+    stroke: none;
+    width: 55px;
+    height: 55px;
+  }
+  .city-details__coords {
+    position: absolute;
+    bottom: -4px;
+    right: 30px;
+
+    gap: 20px;
+    font-size: 36px;
+  }
+  .city-details__list {
+    gap: 20px;
+  }
+  .city-details__item {
+    flex-basis: calc((100% - 20px) / 2);
+
+    gap: 20px;
+  }
+
+  .city-details__item-svg svg {
+    width: 25px;
+    height: 25px;
+  }
+
+  .city-details__item-name {
+    font-size: var(--text-big);
+  }
+  .city-details__item-text {
+    font-size: var(--h3-size-tab);
+  }
+}
+/* ==========popular-cities=====min-width: 1280px================= */
+@media screen and (min-width: 1280px) {
+  .city-details__wrapper {
+    gap: 50px;
+  }
+  .city-details__hero {
+    padding: 100px 50px;
+  }
+
+  .city-details__hero-info {
+    gap: 100px;
+  }
+  .city-details__hero-up {
+    gap: 28px;
+  }
+  .city-details__hero-name {
+    font-size: 40px;
+  }
+  .city-details__hero-temp {
+    font-size: 64px;
+  }
+  .city-details__hero-text {
+    font-size: var(--text-biggest);
+  }
+  .city-details__weather {
+    gap: 30px;
+  }
+  .city-details__weather span {
+    font-size: 50px;
+  }
+  .city-details__weather svg {
+    width: 75px;
+    height: 75px;
+  }
+  .city-details__coords {
+    right: 50px;
+
+    gap: 30px;
+    font-size: 36px;
+  }
+  .city-details__list {
+    gap: 20px;
+  }
+  .city-details__item {
+    flex-basis: calc((100% - 60px) / 4);
+
+    gap: 14px;
+  }
+
+  .city-details__item-name {
+    font-size: var(--text-big);
+  }
+  .city-details__item-text {
+    font-size: var(--h3-size-desk);
   }
 }
 /* ================================ */

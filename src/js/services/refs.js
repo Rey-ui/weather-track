@@ -15,3 +15,5 @@ export const sortContainer = document.querySelector(
 );
 
 export let citiesArr = getSavedCities(LOCAL_KEY) || [];
+// City details refs=================================
+export const cityDetailsEl = document.querySelector('.city-details__wrapper');

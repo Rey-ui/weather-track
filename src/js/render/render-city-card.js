@@ -8,7 +8,7 @@ function createCityCardMarkup(cities, list) {
           const weatherIcon = weather[0].main;
           const weatherIconText = getCurrentWeather(weatherIcon);
           return `<li id="${id}" class="our-cities__item">
-                  <a class="our-cities__item-link" href="./city-info.html?name=${name}">
+                  <a class="our-cities__item-link" href="./city-details.html?name=${name}">
                     <div class="our-cities__item-up">
                       <img
                         src="./img/city-card-img.jpg"
