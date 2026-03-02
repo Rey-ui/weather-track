@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="./cloud.png" />
+    <title>City details weather</title>
+    
+    <script type="module" crossorigin src="/weather-track/commonHelpers.js"></script>
+    <link rel="modulepreload" crossorigin href="/weather-track/assets/vendor-db25513e.js">
+    <link rel="modulepreload" crossorigin href="/weather-track/assets/actions-13d9e831.js">
+    <link rel="stylesheet" href="/weather-track/assets/vendor-e5212ee8.css">
+    <link rel="stylesheet" href="/weather-track/assets/actions-b04b2b77.css">
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="header__content">
+          <a href="./index.html" class="primary-btn header__back-link-desk"
+            ><svg class="header__svg" width="35" height="30">
+              <use href="./svg/symbol-defs.svg#icon-arrow-left"></use>
+            </svg>
+            <span>Back</span></a
+          >
+          <div class="header__logo">
+            <h1 class="header__title">Weather App</h1>
+            <svg class="header__svg" width="35" height="30">
+              <use href="./svg/symbol-defs.svg#icon-cloud"></use>
+            </svg>
+          </div>
+          <a href="./index.html" class="header__back-link-mob"
+            ><svg class="header__svg" width="35" height="30">
+              <use href="./svg/symbol-defs.svg#icon-arrow-left"></use>
+            </svg>
+            <span>Back</span></a
+          >
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <section class="section city-details">
+        <div class="container">
+          <div class="city-details__wrapper"></div>
+        </div>
+      </section>
+      <section class="section city-forcast">
+        <div class="container"><ul class="city-forcast__list"></ul></div>
+      </section>
+    </main>
+    <footer class="footer">
+      <img class="footer__bg" src="/weather-track/assets/city-picture-83c10a35.png" alt="" />
+    </footer>
+    
+  </body>
+</html>
