@@ -7,6 +7,7 @@
 @import url('./components/our-cities-section.css');
 @import url('./components/loader.css');
 @import url('./components/city-details/city-details.css');
+@import url('./components/city-details/city-forcast.css');
 @import url('./base/adaptive.css');
 
 /* box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow); */

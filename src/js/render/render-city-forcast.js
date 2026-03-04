@@ -1,21 +1,20 @@
-// import { getCurrentWeather } from '../actions.js';
+import { getCurrentWeather } from '../actions.js';
 
-// function createForcastCityCardMarkup() {
-//   const weatherIcon = weather[0].main;
-//   const weatherIconText = getCurrentWeather(weatherIcon);
-//   return `<li id="${id}" class="popular-cities__item">
-//                     <a class="popular-cities__item-link" href="./city-details.html?name=${name}">
-//                       <div class="popular-cities__item-content">
-//                         <h3  class="popular-cities__item-title">${name}</h3>
-//                         <p class="popular-cities__item-text">${Math.ceil(temp - 273.15)}°</p>
-//                       </div>
-//                       <div class="popular-cities__item-icon">
-//                           <svg class="popular-cities__svg" width="35" height="30">
-//                               <use href="./svg/symbol-defs.svg#${weatherIconText}"></use>
-//                           </svg>
-//                           <span>${weatherIcon}</span>
-//                         </div>
-//                     </a>
-//                 </li>`;
-// }
-// export default createPopularCityCardMarkup;
+function createForcastCityCardMarkup(weather, date, tempMin, tempMax) {
+  const weatherIcon = weather[0].main;
+  const weatherIconText = getCurrentWeather(weatherIcon);
+  return `<li  class="city-forcast__item">
+                      <h3  class="city-forcast__title">${date}</h3>
+                      <div class="city-forcast__weather">
+                          <span>${weatherIcon}</span>
+                          <svg class="city-forcast__weather-svg" width="35" height="30">
+                              <use href="./svg/symbol-defs.svg#${weatherIconText}"></use>
+                          </svg>
+                      </div>
+                      <div class="city-forcast__temps">
+                        <p class="city-forcast__temp">${Math.ceil(tempMax - 273.15)}°</p><span>/</span>
+                        <p class="city-forcast__temp">${Math.ceil(tempMin - 273.15)}°</p>
+                      </div>
+                </li>`;
+}
+export default createForcastCityCardMarkup;

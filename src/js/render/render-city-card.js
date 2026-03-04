@@ -1,5 +1,5 @@
 import { getCurrentWeather } from '../actions.js';
-//const alternativeEl = '<p class="alternative">There are no cities yet</p>';
+
 function createCityCardMarkup(cities, list) {
   if (cities.length > 0) {
     const markup = cities

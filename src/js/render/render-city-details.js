@@ -1,23 +1,17 @@
 import { getCurrentWeather } from '../actions.js';
+function formatCityTime(unixTime, timezoneOffset) {
+  const date = new Date((unixTime + timezoneOffset) * 1000);
 
-function formatTime(timestamp) {
-  const date = new Date(timestamp * 1000);
+  const hours = String(date.getUTCHours()).padStart(2, '0');
+  const minutes = String(date.getUTCMinutes()).padStart(2, '0');
 
-  const pad = n => String(n).padStart(2, '0');
-
-  return `${pad(date.getHours())}:${pad(date.getMinutes())}`;
+  return `${hours}:${minutes}`;
 }
-// import { DateTime } from 'luxon';
-
-// function getCityTime(dt, timezoneOffset) {
-//   return DateTime.fromSeconds(dt, { zone: 'utc' })
-//     .plus({ seconds: timezoneOffset })
-//     .toFormat('dd LLL yyyy, HH:mm');
-// }
 function createCityDetailsMarkup({
   name,
   coord: { lon, lat },
   main: { feels_like, humidity, pressure, temp, temp_max, temp_min },
+  timezone,
   sys: { sunrise, sunset },
   weather,
   wind: { speed },
@@ -119,7 +113,7 @@ function createCityDetailsMarkup({
                 </div>
                 <div class="city-details__item-info">
                   <span class="city-details__item-name">Sunrise</span>
-                  <h3 class="city-details__item-text">${formatTime(sunrise)}</h3>
+                  <h3 class="city-details__item-text">${formatCityTime(sunrise, timezone)}</h3>
                 </div>
               </li>
               <li class="city-details__item">
@@ -130,7 +124,7 @@ function createCityDetailsMarkup({
                 </div>
                 <div class="city-details__item-info">
                   <span class="city-details__item-name">Sunset</span>
-                  <h3 class="city-details__item-text">${formatTime(sunset)}</h3>
+                  <h3 class="city-details__item-text">${formatCityTime(sunset, timezone)}</h3>
                 </div>
               </li>
             </ul>

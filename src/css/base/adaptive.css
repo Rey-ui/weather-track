@@ -432,3 +432,53 @@
   }
 }
 /* ================================ */
+/* ================================ */
+/* ==========city-details======min-width: 768px================ */
+@media screen and (min-width: 768px) {
+  .city-forcast__title {
+    font-size: var(--h3-size-tab);
+  }
+  .city-forcast__weather {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .city-forcast__weather span {
+    font-size: var(--text-big);
+    display: flex;
+  }
+  .city-forcast__weather-svg {
+    width: 45px;
+    height: 45px;
+  }
+  .city-forcast__temps {
+    font-size: var(--text-big);
+
+    max-width: 100px;
+  }
+}
+/* ==========popular-cities=====min-width: 1280px================= */
+@media screen and (min-width: 1280px) {
+  .city-forcast__title {
+    font-size: var(--h3-size-desk);
+  }
+  .city-forcast__weather {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  .city-forcast__weather span {
+    font-size: var(--text-biggest);
+    display: flex;
+  }
+  .city-forcast__weather-svg {
+    width: 45px;
+    height: 45px;
+  }
+  .city-forcast__temps {
+    font-size: var(--text-biggest);
+
+    max-width: 100px;
+  }
+}
+/* ================================ */
