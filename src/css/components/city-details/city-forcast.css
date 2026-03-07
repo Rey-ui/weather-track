@@ -1,11 +1,14 @@
-.section {
+.header__back-link-mob {
+  display: flex;
 }
-.city-forcast {
+.header__back-link-desk {
+  display: none;
 }
-.container {
+.header__content {
+  display: flex;
+  flex-direction: column;
 }
-.section-title {
-}
+/* ========================================= */
 .city-forcast__list {
   background-color: var(--color-surface);
   padding: var(--card-padding);
@@ -29,7 +32,7 @@
   border-bottom: none;
 }
 .city-forcast__title {
-  padding: 10px;
+  padding: 4px 6px;
   border-radius: 100px;
   background-color: #e7e7e7;
   font-weight: 600;
@@ -44,8 +47,8 @@
   display: none;
 }
 .city-forcast__weather-svg {
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
 }
 .city-forcast__temps {
   display: flex;

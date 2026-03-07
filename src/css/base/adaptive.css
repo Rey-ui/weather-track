@@ -307,6 +307,30 @@
 }
 /* ================================ */
 /* ================================ */
+/* ==========city-details-header======min-width: 768px================ */
+@media screen and (min-width: 768px) {
+  .header__content {
+    display: flex;
+    flex-direction: row;
+  }
+  .header__back-link-mob {
+    display: none;
+  }
+  .primary-btn {
+  }
+  .header__back-link-desk {
+    display: flex;
+  }
+  .header__svg {
+  }
+  .header__logo {
+  }
+  .header__title {
+  }
+  .header__back-link-mob {
+  }
+}
+/* ================================ */
 /* ==========city-details======min-width: 768px================ */
 @media screen and (min-width: 768px) {
   .city-details__wrapper {
@@ -436,6 +460,7 @@
 /* ==========city-details======min-width: 768px================ */
 @media screen and (min-width: 768px) {
   .city-forcast__title {
+    padding: 5px 8px;
     font-size: var(--h3-size-tab);
   }
   .city-forcast__weather {
