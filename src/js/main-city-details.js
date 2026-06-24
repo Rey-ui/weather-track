@@ -29,13 +29,13 @@ async function showCityDetails() {
       message: `❌Sorry, nothing was found for your request!`,
     });
   } finally {
-    //  hideLoader();
+    //hideLoader();
   }
 }
 showCityDetails();
-searchCityWeather(cityName).then(data => {
-  console.log(data);
-});
+// searchCityWeather(cityName).then(data => {
+//   console.log(data);
+// });
 
 searchCityForecastWeather(cityName).then(data => {
   const grouped = {};

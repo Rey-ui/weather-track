@@ -1,13 +1,3 @@
-.header__back-link-mob {
-  display: flex;
-}
-.header__back-link-desk {
-  display: none;
-}
-.header__content {
-  display: flex;
-  flex-direction: column;
-}
 /* ========================================= */
 .city-forcast__list {
   background-color: var(--color-surface);

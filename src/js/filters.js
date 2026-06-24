@@ -1,5 +1,6 @@
-import { citiesListEl, citiesArr } from './services/refs.js';
+import { citiesListEl, db } from './services/refs.js';
 import createCityCardMarkup from './render/render-city-card.js';
+
 function getSortValue(city, option) {
   switch (option) {
     case 'temperature':
@@ -41,7 +42,7 @@ function handleFilterWeather(e) {
   svgEl.innerHTML = switchIndicator
     ? '<use href="./svg/symbol-defs.svg#icon-arrow-up"></use>'
     : '<use href="./svg/symbol-defs.svg#icon-arrow-down"></use>';
-  const sortedCities = [...citiesArr].sort((a, b) => {
+  const sortedCities = [...db.getAll()].sort((a, b) => {
     const valueA = getSortValue(a, option);
     const valueB = getSortValue(b, option);
 

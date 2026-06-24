@@ -8,8 +8,7 @@ import {
   citiesListEl,
   refreshBtn,
   ourCitiesLoader,
-  citiesArr,
-  LOCAL_KEY,
+  db,
 } from './services/refs.js';
 
 export function getCurrentWeather(weather) {
@@ -37,7 +36,7 @@ export async function handleSearchCity(e) {
   e.preventDefault();
   const form = e.currentTarget;
   const cityValue = form.elements.city.value.trim();
-  showLoader();
+
   if (!cityValue) {
     iziToast.error({
       title: 'Error',
@@ -47,6 +46,7 @@ export async function handleSearchCity(e) {
   }
 
   try {
+    showLoader();
     const city = await searchCityWeather(cityValue);
     console.log(city.weather[0].main);
     if (!city || city.length === 0) {
@@ -54,7 +54,6 @@ export async function handleSearchCity(e) {
     } else {
       citiesListEl.innerHTML = '';
       const cities = addCity(city);
-      console.log(citiesArr);
       createCityCardMarkup(cities, citiesListEl);
       refreshBtn.classList.add('active-btn');
     }
@@ -64,6 +63,7 @@ export async function handleSearchCity(e) {
       title: 'Error',
       message: `❌Sorry, nothing was found for your request!`,
     });
+    return;
   } finally {
     hideLoader();
     form.reset();
@@ -73,51 +73,45 @@ export async function handleSearchCity(e) {
 function renderCities(citiesArr, list) {
   list.innerHTML = '';
   createCityCardMarkup(citiesArr, list);
-  if (citiesArr.length) {
+  if (db.getAll().length) {
     refreshBtn.classList.add('active-btn');
   }
 }
 
-export function handleDeleteTask(e) {
+export function handleDeleteCity(e) {
   const btn = e.target.closest('.our-cities__item-btn');
   if (!btn) return;
   const li = btn.closest('li');
   const cityId = Number(li.id);
-  const filtered = citiesArr.filter(city => city.id !== cityId);
-  citiesArr.length = 0;
-  citiesArr.push(...filtered);
-  saveCities(citiesArr, LOCAL_KEY);
-  if (citiesArr.length) {
+  db.remove(cityId);
+  if (db.getAll().length) {
     refreshBtn.classList.add('active-btn');
   } else {
     refreshBtn.classList.remove('active-btn');
   }
-  renderCities(citiesArr, citiesListEl);
+  renderCities(db.getAll(), citiesListEl);
 }
 
 export function handleClearCitiesList() {
   citiesListEl.innerHTML = '<p class="alternative">There are no cities yet</p>';
-  citiesArr.length = 0;
-  localStorage.removeItem(LOCAL_KEY);
+  db.clear();
   refreshBtn.classList.remove('active-btn');
 }
 function addCity(city) {
-  const isExist = citiesArr.some(item => item.id === city.id);
-  if (isExist) {
+  const isAdded = db.add(city);
+
+  if (!isAdded) {
     iziToast.error({
       title: 'Error',
       message: `❌Sorry, already exists!`,
     });
-    return citiesArr;
   }
 
-  citiesArr.push(city);
-  saveCities(citiesArr, LOCAL_KEY);
-  return citiesArr;
+  return db.getAll();
 }
 export async function handleRefreshBtnCities() {
-  const citiesNames = citiesArr.map(({ name }) => name);
-  citiesArr.length = 0;
+  const citiesNames = db.getAll().map(({ name }) => name);
+  db.clear();
   showLoader();
   try {
     for (let cityName of citiesNames) {
@@ -141,7 +135,7 @@ function showLoader() {
 }
 function visibleRefreshBtn() {
   if (!refreshBtn) return;
-  if (citiesArr.length) {
+  if (db.getAll().length) {
     refreshBtn.classList.add('active-btn');
   } else {
     refreshBtn.classList.remove('active-btn');
