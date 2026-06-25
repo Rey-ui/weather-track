@@ -1,93 +1,76 @@
-# Vanilla App Template
+# 🌦️ Weather Track
 
-Цей проект було створено за допомогою Vite. Для знайомства та налаштування
-додаткових можливостей [звернись до документації](https://vitejs.dev/).
+A weather tracking application built with Vanilla JavaScript that allows users
+to monitor weather conditions in multiple cities, manage personal city
+collections, and view detailed forecasts.
 
-## Файли і папки
+## 🚀 Live Demo
 
-- Файли розмітки компонентів сторінки повинні лежати в папці `src/partials` та
-  імпортуватись до файлу `index.html`. Наприклад, файл з розміткою хедера
-  `header.html` створюємо у папці `partials` та імпортуємо в `index.html`.
-- Файли стилів повинні лежати в папці `src/css` та імпортуватись до HTML-файлів
-  сторінок. Наприклад, для `index.html` файл стилів називається `index.css`.
-- Зображення додавай до папки `src/img`. Збирач оптимізує їх, але тільки при
-  деплої продакшн версії проекту. Все це відбувається у хмарі, щоб не
-  навантажувати твій комп'ютер, тому що на слабких компʼютерах це може зайняти
-  багато часу.
+https://rey-ui.github.io/weather-track/
 
-## Деплой
+## Features
 
-Продакшн версія проекту буде автоматично збиратися та деплоїтись на GitHub
-Pages, у гілку `gh-pages`, щоразу, коли оновлюється гілка `main`. Наприклад,
-після прямого пуша або прийнятого пул-реквесту. Для цього необхідно у файлі
-`package.json` змінити значення прапора `--base=/<REPO>/`, для команди `build`,
-замінивши `<REPO>` на назву свого репозиторію, та відправити зміни на GitHub.
+- Browse popular cities with current weather information
+- Add custom cities to a personal tracking list
+- Prevent duplicate or invalid city entries
+- Refresh weather data for all tracked cities
+- Delete individual cities or clear the entire list
+- Sort cities by:
+  - Name
+  - Temperature
+  - Humidity
+  - Wind Speed
 
-```json
-"build": "vite build --base=/<REPO>/",
+- Ascending and descending sorting modes
+- Detailed city page with extended weather information
+- 5-day weather forecast
+- LocalStorage persistence
+- Loading and error states
+- Responsive design
+
+## Tech Stack
+
+- JavaScript (ES6+)
+- Vite
+- Axios
+- OpenWeather API
+- HTML5
+- CSS3
+- LocalStorage
+- iziToast
+
+## What I Practiced
+
+This project was created to strengthen core JavaScript skills before
+transitioning to React.
+
+Key concepts:
+
+- Modular architecture
+- DOM manipulation
+- Event handling
+- Working with arrays and objects
+- API integration
+- Async/Await
+- Error handling
+- Data filtering and sorting
+- LocalStorage persistence
+- Multi-page application structure
+
+## Installation
+
+```bash
+git clone https://github.com/Rey-ui/weather-track.git
+
+cd weather-track
+
+npm install
+
+npm run dev
 ```
 
-Далі необхідно зайти в налаштування GitHub-репозиторію (`Settings` > `Pages`) та
-виставити роздачу продакшн версії файлів з папки `/root` гілки `gh-pages`, якщо
-це не було зроблено автоматично.
+## Author
 
-### Статус деплою
+Andrii Trubchaninov
 
-Статус деплою крайнього коміту відображається іконкою біля його ідентифікатора.
-
-- **Жовтий колір** - виконується збірка та деплой проекту.
-- **Зелений колір** - деплой завершився успішно.
-- **Червоний колір** - під час лінтингу, збірки чи деплою сталася помилка.
-
-Більш детальну інформацію про статус можна переглянути натиснувши на іконку, і в
-вікні, що випадає, перейти за посиланням `Details`.
-
-### Жива сторінка
-
-Через якийсь час, зазвичай кілька хвилин, живу сторінку можна буде подивитися за
-адресою, вказаною на вкладці `Settings` > `Pages` в налаштуваннях репозиторію.
-Наприклад, ось посилання на живу версію для цього репозиторію
-
-Якщо відкриється порожня сторінка, переконайся, що у вкладці `Console` немає
-помилок пов'язаних з неправильними шляхами до CSS та JS файлів проекту
-(**404**). Швидше за все у тебе неправильне значення прапора `--base` для
-команди `build` у файлі `package.json`.
-
-## Як це працює
-
-1. Після кожного пуша у гілку `main` GitHub-репозиторію, запускається
-   спеціальний скрипт (GitHub Action) із файлу `.github/workflows/deploy.yml`.
-2. Усі файли репозиторію копіюються на сервер, де проект ініціалізується та
-   проходить лінтинг та збірку перед деплоєм.
-3. Якщо всі кроки пройшли успішно, зібрана продакшн версія файлів проекту
-   відправляється у гілку `gh-pages`. В іншому випадку, у лозі виконання скрипта
-   буде вказано в чому проблема.
-
-Метою даного проєкту є розробка клієнтського веб-додатку, який дозволяє
-отримувати, зберігати, обробляти та впорядковувати складні погодні дані з
-використанням алгоритмів пошуку і сортування, а також сучасних засобів
-веб-розробки.
-
-Проєкт орієнтований на практичне закріплення знань з мови програмування
-JavaScript, асинхронної обробки даних, роботи з REST API та організації
-структури програмного коду.
-
-Використані технології та інструменти
-
-У процесі реалізації проєкту було використано такі технології:
-
-JavaScript (ES6+) — основна мова програмування
-
-Vite — збирач проєкту та середовище розробки
-
-API/REST API - робота із запитами
-
-Axios — бібліотека для виконання HTTP-запитів
-
-OpenWeatherMap API — джерело погодних даних
-
-HTML5 / CSS3 — побудова інтерфейсу користувача
-
-LocalStorage — локальне збереження даних
-
-Модульна архітектура JavaScript — поділ коду на логічні частини
+Frontend Developer
